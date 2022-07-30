@@ -1,11 +1,11 @@
 package ltd.colingting.web.controller;
 
 import javax.xml.bind.ValidationException;
+import lombok.RequiredArgsConstructor;
 import ltd.colingting.application.service.RegistrationService;
 import ltd.colingting.domain.vo.Address;
 import ltd.colingting.domain.vo.Name;
 import ltd.colingting.domain.vo.PhoneNumber;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022年07月23日 19:25
  */
 @RestController("registration/")
+@RequiredArgsConstructor
 public class RegistrationController {
 
-    @Autowired
-    private RegistrationService service;
+
+    private final RegistrationService service;
 
     @PostMapping("register")
     public String register() throws ValidationException {

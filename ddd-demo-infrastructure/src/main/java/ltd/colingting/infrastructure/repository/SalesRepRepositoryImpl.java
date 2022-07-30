@@ -1,11 +1,11 @@
 package ltd.colingting.infrastructure.repository;
 
+import lombok.RequiredArgsConstructor;
 import ltd.colingting.domain.entity.SalesRep;
 import ltd.colingting.domain.repository.SalesRepRepository;
 import ltd.colingting.infrastructure.assemble.EntityAssemble;
 import ltd.colingting.infrastructure.persistence.mapper.SalesRepMapper;
 import ltd.colingting.infrastructure.persistence.po.SalesRepPO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,13 +13,12 @@ import org.springframework.stereotype.Service;
  * @date 2022年07月24日 13:20
  */
 @Service
+@RequiredArgsConstructor
 public class SalesRepRepositoryImpl implements SalesRepRepository {
 
-    @Autowired
-    private SalesRepMapper salesRepMapper;
+    private final SalesRepMapper salesRepMapper;
 
-    @Autowired
-    private EntityAssemble entityAssemble;
+    private final EntityAssemble entityAssemble;
 
     @Override
     public SalesRep findRep(String areaCode) {

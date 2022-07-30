@@ -2,6 +2,7 @@ package ltd.colingting.application.service;
 
 
 import javax.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import ltd.colingting.domain.entity.SalesRep;
 import ltd.colingting.domain.entity.User;
 import ltd.colingting.domain.repository.SalesRepRepository;
@@ -9,7 +10,6 @@ import ltd.colingting.domain.repository.UserRepository;
 import ltd.colingting.domain.vo.Address;
 import ltd.colingting.domain.vo.Name;
 import ltd.colingting.domain.vo.PhoneNumber;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,13 +17,13 @@ import org.springframework.stereotype.Service;
  * @date 2022年07月23日 17:20
  */
 @Service
+@RequiredArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
 
-    @Autowired
-    private SalesRepRepository salesRepRepo;
+    private final SalesRepRepository salesRepRepo;
 
-    @Autowired
-    private UserRepository userRepo;
+
+    private final UserRepository userRepo;
 
     @Override
     public User register(@NotNull Name name, @NotNull PhoneNumber phone, @NotNull Address address) {

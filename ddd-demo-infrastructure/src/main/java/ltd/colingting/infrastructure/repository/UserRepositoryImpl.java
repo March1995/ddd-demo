@@ -1,11 +1,11 @@
 package ltd.colingting.infrastructure.repository;
 
+import lombok.RequiredArgsConstructor;
 import ltd.colingting.domain.entity.User;
 import ltd.colingting.domain.repository.UserRepository;
 import ltd.colingting.infrastructure.assemble.EntityAssemble;
 import ltd.colingting.infrastructure.persistence.mapper.UserMapper;
 import ltd.colingting.infrastructure.persistence.po.UserPO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,13 +13,14 @@ import org.springframework.stereotype.Service;
  * @date 2022年07月24日 15:27
  */
 @Service
+@RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    @Autowired
-    private UserMapper userMapper;
 
-    @Autowired
-    private EntityAssemble entityAssemble;
+    private final UserMapper userMapper;
+
+
+    private final EntityAssemble entityAssemble;
 
     @Override
     public User saveUser(User user) {
