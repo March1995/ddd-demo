@@ -2,14 +2,16 @@ package ltd.colingting.domain.vo;
 
 import java.util.Arrays;
 import javax.xml.bind.ValidationException;
+import lombok.Value;
 
 /**
  * @author 丁浩
  * @date 2022年07月23日 18:54
  */
 
+@Value
 public class PhoneNumber {
-    private final String number;
+    String number;
     public String getNumber() {
         return number;
     }

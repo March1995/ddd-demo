@@ -1,8 +1,11 @@
 package ltd.colingting.application.service;
 
 
+import java.util.Currency;
 import javax.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import ltd.colingting.domain.entity.ExchangeRate;
+import ltd.colingting.domain.entity.Money;
 import ltd.colingting.domain.entity.SalesRep;
 import ltd.colingting.domain.entity.User;
 import ltd.colingting.domain.repository.SalesRepRepository;
@@ -22,8 +25,11 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     private final SalesRepRepository salesRepRepo;
 
-
     private final UserRepository userRepo;
+
+    private final BankService bankService;
+
+    private final ExchangeService exchangeService;
 
     @Override
     public User register(@NotNull Name name, @NotNull PhoneNumber phone, @NotNull Address address) {
@@ -38,6 +44,13 @@ public class RegistrationServiceImpl implements RegistrationService {
         }
 
         return userRepo.saveUser(user);
+    }
+
+    @Override
+    public void pay(Money money, Currency targetCurrency, Long recipientId) {
+        ExchangeRate rate = exchangeService.getRate(money.getCurrency(), targetCurrency);
+        Money targetMoney = rate.exchange(money);
+        bankService.transfer(targetMoney, recipientId);
     }
 
 
