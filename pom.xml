@@ -17,6 +17,8 @@
     <module>ddd-demo-infrastructure</module>
     <module>ddd-demo-application</module>
     <module>ddd-demo-web</module>
+    <module>ddd-demo-types</module>
+    <module>ddd-demo-external</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -78,6 +80,12 @@
       <dependency>
         <groupId>ltd.colingting</groupId>
         <artifactId>ddd-demo-infrastructure</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>ltd.colingting</groupId>
+        <artifactId>ddd-demo-external</artifactId>
         <version>${project.version}</version>
       </dependency>
 

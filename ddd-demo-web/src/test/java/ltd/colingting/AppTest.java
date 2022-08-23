@@ -1,7 +1,6 @@
 package ltd.colingting;
 
-import cn.hutool.core.date.DateUtil;
-import java.util.Date;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -39,9 +38,4 @@ public class AppTest
     }
 
 
-    public void testParent() {
-        String dateStr = "2012-12-12 12:12:12";
-        Date date = DateUtil.parse(dateStr);
-        System.out.println(date);
-    }
 }
