@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
  * @author 丁浩
  * @date 2022年08月17日 15:04
  */
-@Mapper(componentModel = "spring")
+@Mapper
 public interface AccountBuilder {
 
     AccountBuilder INSTANCE = Mappers.getMapper(AccountBuilder.class);
