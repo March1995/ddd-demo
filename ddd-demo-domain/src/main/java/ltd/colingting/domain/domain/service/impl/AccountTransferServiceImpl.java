@@ -1,6 +1,5 @@
 package ltd.colingting.domain.domain.service.impl;
 
-import lombok.RequiredArgsConstructor;
 import ltd.colingting.domain.domain.entity.Account;
 import ltd.colingting.domain.domain.service.AccountTransferService;
 import ltd.colingting.types.types.ExchangeRate;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
  * @date 2022年08月22日 16:46
  */
 @Service
-@RequiredArgsConstructor
 public class AccountTransferServiceImpl implements AccountTransferService {
 
 

@@ -88,6 +88,10 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>ltd.colingting</groupId>
+      <artifactId>ddd-demo-external</artifactId>
+    </dependency>
 
   </dependencies>
 </project>
