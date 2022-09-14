@@ -27,4 +27,10 @@ public class WeaponRepositoryImpl implements WeaponRepository {
         WeaponPO orderDO = weaponDAO.selectById(weaponId.getId());
         return weaponAssembler.toWeapon(orderDO);
     }
+
+    @Override
+    public void cache(Weapon sword) {
+        WeaponPO weaponPO = weaponAssembler.fromWeapon(sword);
+        weaponDAO.insert(weaponPO);
+    }
 }

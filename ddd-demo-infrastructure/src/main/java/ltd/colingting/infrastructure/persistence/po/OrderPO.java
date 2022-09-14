@@ -14,6 +14,8 @@ public class OrderPO {
     @TableId
     private Long id;
 
+    private Long parentId;
+
     private String itemId;
 
     private String addressDetail;

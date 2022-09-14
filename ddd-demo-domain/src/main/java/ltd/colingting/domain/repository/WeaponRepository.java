@@ -11,4 +11,6 @@ import ltd.colingting.types.types.WeaponId;
 public interface WeaponRepository {
 
     Weapon find(WeaponId weaponId);
+
+    void cache(Weapon sword);
 }

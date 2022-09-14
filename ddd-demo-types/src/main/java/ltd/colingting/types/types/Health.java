@@ -17,4 +17,7 @@ public class Health {
 
     Long health;
 
+    public static Health of(Long i) {
+        return new Health(i);
+    }
 }

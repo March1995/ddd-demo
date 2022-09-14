@@ -1,5 +1,6 @@
 package ltd.colingting.domain.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import ltd.colingting.domain.domain.enums.WeaponType;
 import ltd.colingting.types.types.WeaponId;
@@ -9,6 +10,7 @@ import ltd.colingting.types.types.WeaponId;
  * @date 2022年09月06日 17:08
  */
 @Data
+@AllArgsConstructor
 public class Weapon {
 
     private WeaponId id;
