@@ -22,7 +22,7 @@ public class ItemRepositoryImpl implements ItemRepository {
 
 
     @Override
-    public Item find(String itemId) {
+    public Item find(Long itemId) {
         ItemDetailPO itemDetailPO = itemDAO.selectById(itemId);
 
         return itemAssembler.toItem(itemDetailPO);

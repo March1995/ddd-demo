@@ -17,5 +17,9 @@ public class ItemDetailPO {
 
     private String title;
 
+    private String sellerId;
+
     private String description;
+
+    private Long priceInCents;
 }

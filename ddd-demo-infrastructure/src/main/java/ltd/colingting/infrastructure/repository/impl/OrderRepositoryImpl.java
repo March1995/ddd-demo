@@ -125,7 +125,7 @@ public class OrderRepositoryImpl extends DbRepositorySupport<Order, OrderId> imp
     }
 
     @Override
-    public void save(Order aggregate) {
+    public Order save(Order aggregate) {
         if (aggregate.getId() != null && aggregate.getId().getId() > 0) {
             // update
             OrderPO orderDO = orderAssembler.fromOrder(aggregate);
@@ -139,6 +139,7 @@ public class OrderRepositoryImpl extends DbRepositorySupport<Order, OrderId> imp
             orderDAO.insert(orderDO);
             aggregate.setId(orderAssembler.toOrder(orderDO).getId());
         }
+        return aggregate;
     }
 
     private void save(LineItem lineItem) {

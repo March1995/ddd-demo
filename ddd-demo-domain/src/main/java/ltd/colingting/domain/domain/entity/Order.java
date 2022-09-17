@@ -23,13 +23,23 @@ public class Order  implements Aggregate<OrderId> {
 
     private UserId userId;
 
-    private String itemId;
+    private Long itemId;
 
     private Address address;
 
     private List<LineItem> lineItems;
 
     private OrderState status;
+
+    private Long buyerId;
+
+    private Long sellerId;
+
+    private String itemTitle;
+
+    private Long itemUnitPrice;
+
+    private Integer count;
 
     @Override
     public OrderId getId() {
@@ -41,6 +51,10 @@ public class Order  implements Aggregate<OrderId> {
         LineItem lineItem = LineItem.builder().itemId(itemId).quantity(quantity)
             .price(money.getAmount()).build();
         lineItems.add(lineItem);
+    }
+
+    public Long getTotalCost() {
+        return itemUnitPrice * count;
     }
 
     public void pay() {

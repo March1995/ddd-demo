@@ -1,7 +1,7 @@
 package ltd.colingting.application.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import ltd.colingting.application.assemble.DtoAssembler;
+import ltd.colingting.application.assemble.OrderDtoAssembler;
 import ltd.colingting.application.dto.OrderDTO;
 import ltd.colingting.application.service.OrderService;
 import ltd.colingting.domain.domain.entity.Item;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-    private final DtoAssembler assembler;
+    private final OrderDtoAssembler assembler;
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
 

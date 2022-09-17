@@ -10,5 +10,5 @@ import ltd.colingting.domain.domain.entity.Item;
 public interface ItemRepository {
 
 
-    Item find(String itemId);
+    Item find(Long itemId);
 }

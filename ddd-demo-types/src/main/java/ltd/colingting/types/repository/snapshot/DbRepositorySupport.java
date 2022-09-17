@@ -72,18 +72,18 @@ public abstract class DbRepositorySupport<T extends Aggregate<ID>, ID extends Id
     }
 
     @Override
-    public void save(@NotNull T aggregate) {
+    public T save(@NotNull T aggregate) {
         // 如果没有ID，直接插入
         if (aggregate.getId() == null) {
             this.onInsert(aggregate);
             this.attach(aggregate);
-            return;
+            return aggregate;
         }
 
         // 做Diff
         EntityDiff diff = aggregateManager.detectChanges(aggregate);
         if (diff.isEmpty()) {
-            return;
+            return aggregate;
         }
 
         // 调用UPDATE
@@ -91,6 +91,7 @@ public abstract class DbRepositorySupport<T extends Aggregate<ID>, ID extends Id
 
         // 最终将DB带来的变化更新回AggregateManager
         aggregateManager.merge(aggregate);
+        return aggregate;
     }
 
 }
