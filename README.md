@@ -1,5 +1,6 @@
 # DDD DEMO
-[阿里技术专家殷浩详解DDD系列](https://mp.weixin.qq.com/s/1rdnkROdcNw5ro4ct99SqQ)，代码实践
+[阿里技术专家殷浩详解DDD系列](https://mp.weixin.qq.com/s/1rdnkROdcNw5ro4ct99SqQ)
+代码实践
 
 # 一：[Domain Primitive](https://mp.weixin.qq.com/s?__biz=MzAxNDEwNjk5OQ==&mid=2650403892&idx=1&sn=a91fa477392e80f9420a8ca4d26bcace&chksm=83953c2cb4e2b53a6af3b5a82c3b7d7ed932bfe83f59877a935445ae89edd0ff4ee1c4e82fba&scene=178&cur_album_id=1452661944472977409#rd)
 
